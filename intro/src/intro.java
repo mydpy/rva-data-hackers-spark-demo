@@ -11,7 +11,7 @@ public class WordCount {
     String master = "local";
     JavaSparkContext sc = new JavaSparkContext(
       master, "wordcount", System.getenv("SPARK_HOME"), System.getenv("JARS"));
-    JavaRDD<String> rdd = sc.textFile("spark-input/boa-constrictor");
+    JavaRDD<String> rdd = sc.textFile("intro/data/boa-constrictor");
     JavaPairRDD<String, Integer> counts = rdd.flatMap(
       new FlatMapFunction<String, String>() {
         public Iterable<String> call(String x) {
