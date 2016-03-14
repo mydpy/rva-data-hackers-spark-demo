@@ -42,7 +42,7 @@ Pull the source tree from github and build. Requires Maven 3.3.9 (latest).
 ###Confirm installation
 Run either the Python or Scala shell to confirm Spark is installed: 
 
-	bin/pyspark
+>bin/pyspark
 
     Welcome to
           ____              __
@@ -54,7 +54,7 @@ Run either the Python or Scala shell to confirm Spark is installed:
     SparkContext available as sc, SQLContext available as sqlContext.
     >>>
 
-    bin/spark-shell 
+>bin/spark-shell 
 
     Welcome to
           ____              __
