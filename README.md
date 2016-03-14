@@ -1,4 +1,4 @@
-# spark-wiki-cs
+# Analyzing Wikipedia Event Streams using Spark 2.0 and GraphX
 Data sources, installation instructions, and demonstration of Analyzing Wikipedia Event Streams using Spark 2.0 and GraphX.
 
 ###Clone GitHub Repository
