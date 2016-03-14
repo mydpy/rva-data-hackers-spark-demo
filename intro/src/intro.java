@@ -11,15 +11,15 @@ public class WordCount {
     String master = "local";
     JavaSparkContext sc = new JavaSparkContext(
       master, "wordcount", System.getenv("SPARK_HOME"), System.getenv("JARS"));
-    JavaRDD&#60;String> rdd = sc.textFile("spark-input/boa-constrictor");
-    JavaPairRDD&#60;String, Integer> counts = rdd.flatMap(
-      new FlatMapFunction&#60;String, String>() {
-        public Iterable&#60;String> call(String x) {
+    JavaRDD<String> rdd = sc.textFile("spark-input/boa-constrictor");
+    JavaPairRDD<String, Integer> counts = rdd.flatMap(
+      new FlatMapFunction<String, String>() {
+        public Iterable<String> call(String x) {
           return Arrays.asList(x.split(" "));
-        }}).mapToPair(new PairFunction&#60;String, String, Integer>(){
-          public Tuple2&#60;String, Integer> call(String x){
+        }}).mapToPair(new PairFunction<String, String, Integer>(){
+          public Tuple2<String, Integer> call(String x){
             return new Tuple2(x, 1);
-          }}).reduceByKey(new Function2&#60;Integer, Integer, Integer>(){
+          }}).reduceByKey(new Function2<Integer, Integer, Integer>(){
               public Integer call(Integer x, Integer y){ return x+y;}});
   counts.saveAsTextFile("output/boa-constrictor");
   }
